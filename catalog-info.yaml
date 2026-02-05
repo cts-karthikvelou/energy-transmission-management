@@ -10,7 +10,7 @@ metadata:
   annotations:
     expensetracker.io/appid: EnergyTransmissionManagementComponent
     github.com/project-slug: karthikvelou-cts/energy-Transmission-management
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:./docs
     # flowsource/aws-pipelines: "flowsource-demo-cd-pipeline"
     flowsource/jenkins-pipelines: "Energy-Transmission-Management-Pipeline"
     flowsource/jenkins-pipelines-trigger: "Energy-Transmission-Management-Pipeline"

@@ -3,6 +3,10 @@ kind: Component
 metadata:
   name: Energy_Transmission_Management
   description: "Energy Transmission Management"
+  tags:
+    - testing 
+    - sonar 
+    - experimental
   annotations:
     expensetracker.io/appid: EnergyTransmissionManagementComponent
     github.com/project-slug: karthikvelou-cts/energy-Transmission-management

@@ -35,6 +35,7 @@ pipeline {
                                 -Dsonar.sources=. \
                                 -Dsonar.host.url=https://dev.flowsource.next25era.org:447 \
                                 -Dsonar.login=${SQ_TOKEN}
+                                -Dsonar.scanner.skipCertificateCheck=true
                             """
                         }
                     }

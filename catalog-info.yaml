@@ -1,6 +1,53 @@
 pipeline {
     agent any
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: energy-management-platform
+  description: "Platform for managing energy assets and optimization"
+spec:
+  owner: group:catalog-admin
 
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Energy_Transmission_Management
+  description: "Energy Transmission Management"
+  tags:
+    - testing 
+    - sonar 
+    - experimental
+  annotations:
+    expensetracker.io/appid: EnergyTransmissionManagementComponent
+    github.com/project-slug: karthikvelou-cts/energy-Transmission-management
+    backstage.io/techdocs-ref: dir:./docs
+    # flowsource/aws-pipelines: "flowsource-demo-cd-pipeline"
+    flowsource/jenkins-pipelines: "Energy-Transmission-Management-Pipeline"
+    flowsource/jenkins-pipelines-trigger: "Energy-Transmission-Management-Pipeline"
+    flowsource/aws-repo-name: ""
+    flowsource/aws-region: "ap-southeast-2"
+    flowsource/durationInDays: '60'
+    flowsource/aws-project-name: flowsource-demo-v1
+    flowsource/sonarqube-project-key: karthikvelou-cts_energy-transmission-management
+    flowsource/github-repo-owner: karthikvelou-cts
+    flowsource/github-repo-name: energy-transmission-management
+    flowsource/checkmarx-project-id: sonarscan-testing
+    flowsource/blackduck-project-id: sonarscan-testing
+    backstage.io/kubernetes-namespace: sonar-ns
+    backstage.io/kubernetes-label-selector: app=sonarscan-testing
+    flowsource/jira-project-key: ETM
+    flowsource/jira-storypoint-field: 'Story point estimate'
+    flowsource/jira-filter-field-value: ''
+    flowsource/jira-filter-field-key: ''
+    flowsource/jira-enable-current-sprint: 'true'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:catalog-admin
+  system: energy-management-platform
+  providesApis:
+    - sonarscan-testing-api
     tools {
         // Make sure you have SonarScanner installed and configured in Jenkins global tools
         sonarScanner 'SonarScanner'

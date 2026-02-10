@@ -26,16 +26,17 @@ pipeline {
                 script {
                     withSonarQubeEnv('MySonarQubeServer') {
 
-                        // Load the SonarScanner tool by NAME
                         def scannerHome = tool 'SonarScanner'
 
-                        sh """
-                            ${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=cts-karthikvelou_energy-transmission-management_28a9341b-e6c2-4dd2-9af2-594dba9862a4 \
-                            -Dsonar.sources=. \
-                            -Dsonar.host.url=https://dev.flowsource.next25era.org:447 \
-                            -Dsonar.login=${SONARQUBE_TOKEN}
-                        """
+                        withCredentials([string(credentialsId: 'SONARQUBE_TOKEN', variable: 'SQ_TOKEN')]) {
+                            sh """
+                                ${scannerHome}/bin/sonar-scanner \
+                                -Dsonar.projectKey=cts-karthikvelou_energy-transmission-management_28a9341b-e6c2-4dd2-9af2-594dba9862a4 \
+                                -Dsonar.sources=. \
+                                -Dsonar.host.url=https://dev.flowsource.next25era.org:447 \
+                                -Dsonar.login=${SQ_TOKEN}
+                            """
+                        }
                     }
                 }
             }

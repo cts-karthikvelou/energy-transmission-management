@@ -1,0 +1,4 @@
+site_name: Energy Transmission Management Docs
+nav:
+  - Home: index.md
+docs_dir: docs

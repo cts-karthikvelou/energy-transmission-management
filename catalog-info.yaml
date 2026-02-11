@@ -18,7 +18,7 @@ metadata:
     - experimental
   annotations:
     expensetracker.io/appid: EnergyTransmissionManagementComponent
-    github.com/project-slug: karthikvelou-cts/energy-Transmission-management
+    github.com/project-slug: cts-karthikvelou/energy-Transmission-management
     backstage.io/techdocs-ref: dir:./docs
     # flowsource/aws-pipelines: "flowsource-demo-cd-pipeline"
     flowsource/jenkins-pipelines: "Energy-Transmission-Management-Pipeline"
@@ -28,7 +28,7 @@ metadata:
     flowsource/durationInDays: '60'
     flowsource/aws-project-name: flowsource-demo-v1
     flowsource/sonarqube-project-key: cts-karthikvelou_energy-transmission-management_28a9341b-e6c2-4dd2-9af2-594dba9862a4
-    flowsource/github-repo-owner: karthikvelou-cts
+    flowsource/github-repo-owner: cts-karthikvelou
     flowsource/github-repo-name: energy-transmission-management
     flowsource/checkmarx-project-id: sonarscan-testing
     flowsource/blackduck-project-id: sonarscan-testing

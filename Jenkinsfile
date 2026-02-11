@@ -15,10 +15,11 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
+        stage('Test with Coverage') { 
+            steps { 
+                // Run tests with coverage enabled 
+                sh 'npm test -- --coverage' 
+            } 
         }
 
         stage('SonarQube Analysis') {
@@ -35,7 +36,8 @@ pipeline {
                                 -Dsonar.sources=. \
                                 -Dsonar.host.url=https://dev.flowsource.next25era.org:447 \
                                 -Dsonar.login=${SQ_TOKEN} \
-                                -Dsonar.scanner.skipCertificateCheck=true
+                                -Dsonar.scanner.skipCertificateCheck=true \
+                                -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
                             """
                         }
                     }
